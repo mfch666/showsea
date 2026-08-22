@@ -1,0 +1,13 @@
+{
+  "name": "github-showcase",
+  "version": "1.0.0",
+  "description": "仿 liuhouliang.com 的 GitHub 项目展示静态站，可托管于 SAE Pages",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "sync": "node scripts/sync.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

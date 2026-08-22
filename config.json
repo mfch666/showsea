@@ -1,0 +1,24 @@
+{
+  "site": {
+    "title": "My Projects",
+    "author": "Your Name",
+    "avatar": "images/avatar.svg",
+    "bio": "开源项目与工具的收集展示。专注前端、全栈与开发者工具。",
+    "github": "https://github.com/your-username",
+    "githubUser": "your-username",
+    "startYear": 2024,
+    "nav": [
+      { "label": "项目", "href": "#projects" },
+      { "label": "关于", "href": "#about" }
+    ]
+  },
+  "repos": [
+    { "owner": "vuejs", "name": "vue", "featured": true },
+    { "owner": "facebook", "name": "react" },
+    { "owner": "mrdoob", "name": "three.js" },
+    { "owner": "CyC2018", "name": "CS-Notes", "featured": true },
+    { "owner": "ant-design", "name": "ant-design" },
+    { "owner": "vercel", "name": "next.js" }
+  ],
+  "githubToken": ""
+}

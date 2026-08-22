@@ -1,0 +1,173 @@
+'use strict';
+
+// 采集脚本：读取 config.json 指定的 GitHub 仓库，调用 GitHub API，
+// 经文本处理（摘中文 / 译英文）后生成 public/data.js 与 public/data.json。
+// 用法：
+//   node scripts/sync.js               全量采集 config.json 中的仓库
+//   本地服务器 GET /?repo=owner/name    追加采集并落地（见 src/server.js）
+
+const fs = require('fs');
+const path = require('path');
+const { processText, langLabel } = require('../src/translate');
+
+const ROOT = path.resolve(__dirname, '..');
+const CONFIG_PATH = path.join(ROOT, 'config.json');
+const DATA_JS = path.join(ROOT, 'public', 'data.js');
+const DATA_JSON = path.join(ROOT, 'public', 'data.json');
+
+let token = '';
+
+function githubFetch(apiPath) {
+  const url = 'https://api.github.com' + apiPath;
+  const headers = {
+    'Accept': 'application/vnd.github+json',
+    'User-Agent': 'github-showcase-sync'
+  };
+  if (token) headers['Authorization'] = 'Bearer ' + token;
+  return fetch(url, { headers }).then(function (r) {
+    if (!r.ok) {
+      return r.text().then(function (t) {
+        throw new Error('GitHub ' + r.status + ' ' + apiPath + ' -> ' + t.slice(0, 200));
+      });
+    }
+    return r.json();
+  });
+}
+
+function delay(ms) { return new Promise(function (resolve) { setTimeout(resolve, ms); }); }
+
+async function fetchUser(username) {
+  try {
+    const u = await githubFetch('/users/' + encodeURIComponent(username));
+    return {
+      repos: u.public_repos,
+      followers: u.followers,
+      following: u.following
+    };
+  } catch (e) {
+    console.warn('  ! 用户资料获取失败:', e.message);
+    return { repos: null, followers: null, following: null };
+  }
+}
+
+async function fetchRepo(owner, name) {
+  const r = await githubFetch('/repos/' + encodeURIComponent(owner) + '/' + encodeURIComponent(name));
+  return {
+    owner: r.owner.login,
+    name: r.name,
+    fullName: r.full_name,
+    description: r.description || '',
+    language: r.language,
+    languageLabel: langLabel(r.language),
+    stars: r.stargazers_count,
+    forks: r.forks_count,
+    watchers: r.subscribers_count || r.watchers_count,
+    topics: r.topics || [],
+    htmlUrl: r.html_url,
+    homepage: r.homepage,
+    updatedAt: r.updated_at,
+    createdAt: r.created_at
+  };
+}
+
+// 全量采集 config.json 中的仓库并写文件
+async function run() {
+  const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  token = config.githubToken || process.env.GITHUB_TOKEN || '';
+  const site = config.site || {};
+  const reposCfg = config.repos || [];
+  const owner = site.githubUser;
+
+  console.log('▶ 开始采集 ' + reposCfg.length + ' 个仓库…');
+
+  const repos = [];
+  let totalStars = 0;
+  for (const cfg of reposCfg) {
+    const [o, n] = (cfg.name && cfg.name.indexOf('/') >= 0) ? cfg.name.split('/') : [cfg.owner || owner, cfg.name];
+    if (!o || !n) { console.warn('  ! 跳过无效项:', JSON.stringify(cfg)); continue; }
+    try {
+      const r = await fetchRepo(o, n);
+      r.featured = !!cfg.featured;
+      r.descriptionProcessed = processText(r.description);
+      totalStars += (r.stars || 0);
+      repos.push(r);
+      console.log('  ✓ ' + r.fullName + '  ★' + r.stars + '  "' + (r.descriptionProcessed || '').slice(0, 40) + '"');
+    } catch (e) {
+      console.warn('  ✗ ' + o + '/' + n + ' 失败: ' + e.message);
+    }
+    await delay(300);
+  }
+
+  const stats = { repos: repos.length, stars: totalStars };
+  if (owner) {
+    const u = await fetchUser(owner);
+    if (u.repos != null) stats.repos = u.repos;
+    if (u.followers != null) stats.followers = u.followers;
+    if (u.following != null) stats.following = u.following;
+  }
+
+  const out = {
+    site: {
+      title: site.title,
+      author: site.author,
+      avatar: site.avatar,
+      bio: processText(site.bio || ''),
+      github: site.github,
+      githubUser: site.githubUser,
+      startYear: site.startYear,
+      nav: site.nav || [],
+      about: site.about || '',
+      stats: stats
+    },
+    lastSync: new Date().toISOString(),
+    repos: repos
+  };
+
+  fs.writeFileSync(DATA_JSON, JSON.stringify(out, null, 2), 'utf-8');
+  fs.writeFileSync(DATA_JS, 'window.SITE_DATA = ' + JSON.stringify(out, null, 2) + ';\n', 'utf-8');
+  console.log('✔ 已生成 public/data.js / data.json （' + repos.length + ' 个仓库）');
+}
+
+// 追加采集：把 extraList 里的仓库（"owner/name" 字符串或 {owner,name} 对象）
+// 去重写入 config.json，然后全量重新生成数据。供本地服务器 URL 传参调用。
+async function addReposAndSync(extraList) {
+  if (!Array.isArray(extraList)) extraList = extraList ? [extraList] : [];
+  const raw = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+  const existing = Array.isArray(raw.repos) ? raw.repos : [];
+  const norm = function (s) { return (s || '').toLowerCase(); };
+  const has = function (o, n) {
+    return existing.some(function (r) {
+      if (typeof r === 'string') return norm(r) === norm(o + '/' + n);
+      if (r.name && r.name.indexOf('/') >= 0) return norm(r.name) === norm(o + '/' + n);
+      return norm(r.owner) === norm(o) && norm(r.name) === norm(n);
+    });
+  };
+  let added = 0;
+  extraList.forEach(function (item) {
+    let o, n;
+    if (typeof item === 'string' && item.indexOf('/') >= 0) {
+      const parts = item.split('/');
+      o = parts[0]; n = parts[1];
+    } else if (item && item.owner && item.name) {
+      o = item.owner; n = item.name;
+    } else { return; }
+    if (!o || !n) return;
+    if (has(o, n)) { console.log('  · 已存在，跳过 ' + o + '/' + n); return; }
+    existing.push({ owner: o, name: n });
+    added++;
+    console.log('  + 新增 ' + o + '/' + n + ' 到 config.json');
+  });
+  raw.repos = existing;
+  fs.writeFileSync(CONFIG_PATH, JSON.stringify(raw, null, 2), 'utf-8');
+  console.log('▶ 开始采集（含 ' + added + ' 个新增仓库）…');
+  return run();
+}
+
+if (require.main === module) {
+  run().catch(function (e) {
+    console.error('同步失败:', e.message);
+    process.exit(1);
+  });
+}
+
+module.exports = { run: run, addReposAndSync: addReposAndSync };

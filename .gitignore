@@ -1,0 +1,11 @@
+# 依赖（本模板零依赖，此条备用）
+node_modules/
+
+# 本地环境
+.env
+*.log
+
+# 工作记忆目录（WorkBuddy 自动维护，不进项目仓库）
+.workbuddy/
+
+# 注意：public/data.js 与 public/data.json 是站点内容，必须提交，不要忽略。
