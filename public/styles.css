@@ -540,6 +540,7 @@ html.dark .card-base { box-shadow: 0 2px 8px -2px #0000004d; }
 @media (min-width: 768px) { .info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .info-card {
+  position: relative;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-card);
