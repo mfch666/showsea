@@ -9,3 +9,6 @@ node_modules/
 .workbuddy/
 
 # 注意：public/data.js 与 public/data.json 是站点内容，必须提交，不要忽略。
+
+# 本地专用目录（不进 git）
+private/

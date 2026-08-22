@@ -6,6 +6,7 @@ const path = require('path');
 const sync = require('../scripts/sync');
 
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
+const PRIVATE_DIR = path.resolve(__dirname, '..', 'private');
 const PORT = process.env.PORT || 3000;
 
 const MIME = {
@@ -38,7 +39,6 @@ const server = http.createServer(async function (req, res) {
   const pathname = decodeURIComponent(url.pathname);
 
   // 1) URL 传参采集：?repo=owner/name
-  //    支持多种形式：?repo=a/b&repo=c/d   或   ?repo=a/b,c/d
   const repoParams = url.searchParams.getAll('repo');
   const extra = [];
   repoParams.forEach(function (p) {
@@ -56,7 +56,13 @@ const server = http.createServer(async function (req, res) {
     return;
   }
 
-  // 2) 常规路由
+  // 2) 私有管理页面：/private/ 或 /private/collect.html
+  if (pathname === '/private/' || pathname === '/private' || pathname === '/private/collect.html') {
+    serveFile(res, path.join(PRIVATE_DIR, 'collect.html'));
+    return;
+  }
+
+  // 3) 常规路由
   let pn = pathname === '/' ? '/index.html' : pathname;
   if (pn === '/api/data') {
     serveFile(res, path.join(PUBLIC_DIR, 'data.json'));
@@ -73,6 +79,26 @@ const server = http.createServer(async function (req, res) {
     return;
   }
 
+  // API: 私有采集接口（POST，供 private/collect.html 使用）
+  if (pn === '/api/collect' && req.method === 'POST') {
+    let body = '';
+    req.on('data', function (chunk) { body += chunk; });
+    req.on('end', function () {
+      try {
+        const input = JSON.parse(body);
+        const repos = Array.isArray(input.repos) ? input.repos : [];
+        const items = repos.map(function (r) { return String(r).trim(); }).filter(Boolean);
+        if (!items.length) { send(res, 400, JSON.stringify({ ok: false, error: 'repos 数组为空' })); return; }
+        sync.addReposAndSync(items)
+          .then(function () { send(res, 200, JSON.stringify({ ok: true, count: items.length })); })
+          .catch(function (e) { send(res, 500, JSON.stringify({ ok: false, error: e.message })); });
+      } catch (e) {
+        send(res, 400, JSON.stringify({ ok: false, error: 'JSON parse: ' + e.message }));
+      }
+    });
+    return;
+  }
+
   // 防目录穿越
   const safePath = path.normalize(pn).replace(/^(\.\.[/\\])+/, '');
   const filePath = path.join(PUBLIC_DIR, safePath);
@@ -81,7 +107,7 @@ const server = http.createServer(async function (req, res) {
   fs.stat(filePath, function (err, stat) {
     if (err) { send(res, 404, 'Not Found'); return; }
     if (stat.isFile()) { serveFile(res, filePath); return; }
-    // 目录请求（如 /about/ 或 /about）→ 尝试 index.html
+    // 目录请求 → 尝试 index.html
     if (stat.isDirectory()) {
       const idx = path.join(filePath, 'index.html');
       fs.stat(idx, function (e2, s2) {
@@ -96,5 +122,5 @@ const server = http.createServer(async function (req, res) {
 
 server.listen(PORT, function () {
   console.log('▶ Dev server running: http://localhost:' + PORT + '/');
-  console.log('▶ 采集用法: http://localhost:' + PORT + '/?repo=owner/name');
+  console.log('▶ 采集页面: http://localhost:' + PORT + '/private/');
 });

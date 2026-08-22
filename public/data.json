@@ -4,8 +4,8 @@
     "author": "菜菜坊",
     "avatar": "images/avatar.svg",
     "bio": "开源项目与工具的收集展示。专注前端、全栈与开发者工具。",
-    "github": "https://github.com/your-username",
-    "githubUser": "your-username",
+    "github": "https://github.com/mfch666",
+    "githubUser": "mfch666",
     "startYear": 2024,
     "nav": [
       {
@@ -17,11 +17,7 @@
         "href": "/about/"
       }
     ],
-    "about": "这里写关于本站 / 作者的介绍，支持多段落与链接。<br><br>例如：我是菜菜坊，专注开源项目收集与前端开发。更多内容后续补充。",
-    "stats": {
-      "repos": 6,
-      "stars": 999184
-    },
+    "about": "",
     "aboutPage": {
       "greeting": "👋 Hey, I'm",
       "role": "开源项目收集者 / 独立开发者",
@@ -50,8 +46,8 @@
           "value": "JavaScript / Node.js / CSS"
         },
         {
-          "label": "邮箱",
-          "value": "mailto:your@email.com",
+          "label": "起航",
+          "value": "www.flyffstart.com",
           "isLink": true
         },
         {
@@ -72,20 +68,38 @@
       "timeline": [
         {
           "date": "2026-08",
+          "text": "上线 GitHub 仓库与 URL 参数"
+        },
+        {
+          "date": "2026-08",
+          "text": "部署至 SAE Pages，全静态化"
+        },
+        {
+          "date": "2026-08",
           "text": "站点重构，统一设计令牌与暗色模式"
         },
         {
-          "date": "2026-08",
-          "text": "上线 GitHub 仓库采集与 URL 参数采集"
+          "date": "2022-01",
+          "text": "站点重构，投身修罗bbs,止于言论"
         },
         {
-          "date": "2026-08",
-          "text": "部署至 SAE Pages，手动 git 同步"
+          "date": "2022-01",
+          "text": "起航论坛被恶意发贴数据冻结"
+        },
+        {
+          "date": "2011-08",
+          "text": "源于起航忠于起航flyffstart"
         }
       ]
+    },
+    "stats": {
+      "repos": 4,
+      "stars": 1479189,
+      "followers": 0,
+      "following": 1
     }
   },
-  "lastSync": "2026-08-22T08:37:40.692Z",
+  "lastSync": "2026-08-22T10:02:21.618Z",
   "repos": [
     {
       "owner": "vuejs",
@@ -94,8 +108,8 @@
       "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
       "language": "TypeScript",
       "languageLabel": "TypeScript",
-      "stars": 210386,
-      "forks": 33758,
+      "stars": 210453,
+      "forks": 33757,
       "watchers": 5782,
       "topics": [
         "framework",
@@ -105,7 +119,7 @@
       ],
       "htmlUrl": "https://github.com/vuejs/vue",
       "homepage": "http://v2.vuejs.org",
-      "updatedAt": "2026-08-22T08:37:30Z",
+      "updatedAt": "2026-08-22T09:55:49Z",
       "createdAt": "2013-07-29T03:24:51Z",
       "featured": true,
       "descriptionProcessed": "这个是 repo 用于 Vue 2. 用于 Vue 3, Go 以 https://github.com/vuejs/core"
@@ -117,9 +131,9 @@
       "description": "The library for web and native user interfaces.",
       "language": "JavaScript",
       "languageLabel": "JavaScript",
-      "stars": 247552,
-      "forks": 51247,
-      "watchers": 6601,
+      "stars": 247619,
+      "forks": 51245,
+      "watchers": 6600,
       "topics": [
         "declarative",
         "frontend",
@@ -130,7 +144,7 @@
       ],
       "htmlUrl": "https://github.com/react/react",
       "homepage": "https://react.dev",
-      "updatedAt": "2026-08-22T08:37:24Z",
+      "updatedAt": "2026-08-22T10:00:43Z",
       "createdAt": "2013-05-24T16:15:54Z",
       "featured": false,
       "descriptionProcessed": "库用于 Web 与原生用户界面."
@@ -142,7 +156,7 @@
       "description": "JavaScript 3D Library.",
       "language": "JavaScript",
       "languageLabel": "JavaScript",
-      "stars": 114674,
+      "stars": 114675,
       "forks": 36494,
       "watchers": 2517,
       "topics": [
@@ -161,7 +175,7 @@
       ],
       "htmlUrl": "https://github.com/mrdoob/three.js",
       "homepage": "https://threejs.org/",
-      "updatedAt": "2026-08-22T08:15:33Z",
+      "updatedAt": "2026-08-22T09:42:47Z",
       "createdAt": "2010-03-23T18:58:01Z",
       "featured": false,
       "descriptionProcessed": "JavaScript 3D 库."
@@ -173,7 +187,7 @@
       "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
       "language": null,
       "languageLabel": "Other",
-      "stars": 185547,
+      "stars": 185548,
       "forks": 50778,
       "watchers": 5216,
       "topics": [
@@ -188,7 +202,7 @@
       ],
       "htmlUrl": "https://github.com/CyC2018/CS-Notes",
       "homepage": "http://cyc2018.xyz",
-      "updatedAt": "2026-08-22T08:06:45Z",
+      "updatedAt": "2026-08-22T08:55:50Z",
       "createdAt": "2018-02-13T14:56:24Z",
       "featured": true,
       "descriptionProcessed": "技术面试必备基础知识、计算机操作系统、计算机网络、系统设计"
@@ -200,7 +214,7 @@
       "description": "An enterprise-class UI design language and React UI library",
       "language": "TypeScript",
       "languageLabel": "TypeScript",
-      "stars": 99140,
+      "stars": 99141,
       "forks": 54698,
       "watchers": 249,
       "topics": [
@@ -214,7 +228,7 @@
       ],
       "htmlUrl": "https://github.com/ant-design/ant-design",
       "homepage": "https://ant.design",
-      "updatedAt": "2026-08-22T08:19:11Z",
+      "updatedAt": "2026-08-22T09:23:13Z",
       "createdAt": "2015-04-24T15:37:24Z",
       "featured": false,
       "descriptionProcessed": "一个 enterprise-class UI 设计语言与 React UI 库"
@@ -226,8 +240,8 @@
       "description": "The React Framework",
       "language": "JavaScript",
       "languageLabel": "JavaScript",
-      "stars": 141885,
-      "forks": 31772,
+      "stars": 141886,
+      "forks": 31771,
       "watchers": 1638,
       "topics": [
         "blog",
@@ -247,10 +261,138 @@
       ],
       "htmlUrl": "https://github.com/vercel/next.js",
       "homepage": "https://nextjs.org",
-      "updatedAt": "2026-08-22T08:30:03Z",
+      "updatedAt": "2026-08-22T09:05:42Z",
       "createdAt": "2016-10-05T23:32:51Z",
       "featured": false,
       "descriptionProcessed": "React 框架"
+    },
+    {
+      "owner": "tiagozip",
+      "name": "cap",
+      "fullName": "tiagozip/cap",
+      "description": "Free, open-source and self-hosted CAPTCHA alternative to reCAPTCHA. Privacy-first and powered by proof-of-work and instrumentation challenges.",
+      "language": "JavaScript",
+      "languageLabel": "JavaScript",
+      "stars": 7562,
+      "forks": 537,
+      "watchers": 24,
+      "topics": [
+        "anti-abuse",
+        "anti-bot",
+        "anti-scraper",
+        "antispam",
+        "captcha",
+        "defense",
+        "javascript",
+        "proof-of-work"
+      ],
+      "htmlUrl": "https://github.com/tiagozip/cap",
+      "homepage": "https://trycap.dev",
+      "updatedAt": "2026-08-22T03:13:32Z",
+      "createdAt": "2025-01-11T17:35:52Z",
+      "featured": false,
+      "descriptionProcessed": "免费, open-source 与 self-hosted CAPTCHA 替代以 reCAPTCHA. Privacy-first 与 powered 由 proof-of-work 与 instrumentation challenges."
+    },
+    {
+      "owner": "mfch666",
+      "name": "rustdesk",
+      "fullName": "mfch666/rustdesk",
+      "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+      "language": "Rust",
+      "languageLabel": "Rust",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "topics": [],
+      "htmlUrl": "https://github.com/mfch666/rustdesk",
+      "homepage": "https://rustdesk.com",
+      "updatedAt": "2024-09-09T13:46:00Z",
+      "createdAt": "2024-09-09T13:04:24Z",
+      "featured": false,
+      "descriptionProcessed": "一个 open-source remote desktop 应用 designed 用于 self-hosting, as 一个替代以 TeamViewer."
+    },
+    {
+      "owner": "ollama",
+      "name": "ollama",
+      "fullName": "ollama/ollama",
+      "description": "Get up and running with Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "languageLabel": "Go",
+      "stars": 179157,
+      "forks": 17515,
+      "watchers": 1004,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "gemma3",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llama3",
+        "llm",
+        "llms",
+        "minimax",
+        "mistral",
+        "ollama",
+        "qwen"
+      ],
+      "htmlUrl": "https://github.com/ollama/ollama",
+      "homepage": "https://ollama.com",
+      "updatedAt": "2026-08-22T09:59:30Z",
+      "createdAt": "2023-06-26T19:39:32Z",
+      "featured": false,
+      "descriptionProcessed": "获取向上与 运行带有 Kimi-K2.6, GLM-5.2, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma 与 other 模型."
+    },
+    {
+      "owner": "browser-use",
+      "name": "browser-use",
+      "fullName": "browser-use/browser-use",
+      "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
+      "language": "Python",
+      "languageLabel": "Python",
+      "stars": 110063,
+      "forks": 12098,
+      "watchers": 457,
+      "topics": [
+        "ai-agents",
+        "ai-tools",
+        "browser-automation",
+        "browser-use",
+        "llm",
+        "playwright",
+        "python"
+      ],
+      "htmlUrl": "https://github.com/browser-use/browser-use",
+      "homepage": "https://browser-use.com",
+      "updatedAt": "2026-08-22T09:50:32Z",
+      "createdAt": "2024-10-31T16:00:56Z",
+      "featured": false,
+      "descriptionProcessed": "🌐 让 websites accessible 用于 AI agents. Automate tasks online 带有 ease."
+    },
+    {
+      "owner": "deepseek-ai",
+      "name": "deepseek-harness",
+      "fullName": "deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "languageLabel": "TypeScript",
+      "stars": 183085,
+      "forks": 20116,
+      "watchers": 800,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "htmlUrl": "https://github.com/deepseek-ai/deepseek-harness",
+      "homepage": "https://deepseek.com/harness",
+      "updatedAt": "2026-08-22T10:02:03Z",
+      "createdAt": "2026-08-13T11:56:32Z",
+      "featured": false,
+      "descriptionProcessed": "DeepSeek Harness: Everything 是一个插件."
     }
   ]
 }

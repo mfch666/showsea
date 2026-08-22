@@ -57,9 +57,6 @@
       if (el) el.src = av;
     });
   }
-  const gh = document.getElementById('gh-link');
-  if (gh && site.github) gh.href = site.github;
-
   // ---------- Hero bio ----------
   const bio = document.getElementById('hero-bio');
   if (bio) bio.textContent = site.bio || '';
@@ -107,9 +104,7 @@
   if (ft) {
     const y = new Date().getFullYear();
     const start = site.startYear || y;
-    ft.innerHTML = '© ' + start + (start < y ? '–' + y : '') + ' ' +
-      escapeHtml(site.author || 'Your Name') +
-      ' · <a href="' + (site.github || '#') + '" target="_blank" rel="noopener">GitHub</a>';
+    ft.textContent = '© ' + start + (start < y ? '–' + y : '') + ' ' + (site.author || 'Your Name');
   }
 
   // ===== 渲染单个仓库卡片 =====
