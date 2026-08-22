@@ -147,6 +147,14 @@
     {
       "owner": "OpenCut-app",
       "name": "OpenCut"
+    },
+    {
+      "owner": "OpenListTeam",
+      "name": "OpenList"
+    },
+    {
+      "owner": "torvalds",
+      "name": "linux"
     }
   ],
   "githubToken": ""

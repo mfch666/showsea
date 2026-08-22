@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T10:02:21.618Z",
+  "lastSync": "2026-08-22T17:07:07.026Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -416,6 +416,24 @@ window.SITE_DATA = {
       "createdAt": "2026-08-13T11:56:32Z",
       "featured": false,
       "descriptionProcessed": "DeepSeek Harness: Everything 是一个插件."
+    },
+    {
+      "owner": "torvalds",
+      "name": "linux",
+      "fullName": "torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "languageLabel": "C",
+      "stars": 243797,
+      "forks": 64034,
+      "watchers": 8377,
+      "topics": [],
+      "htmlUrl": "https://github.com/torvalds/linux",
+      "homepage": "",
+      "updatedAt": "2026-08-22T17:01:56Z",
+      "createdAt": "2011-09-04T22:48:12Z",
+      "featured": false,
+      "descriptionProcessed": "Linux kernel 源 tree"
     }
   ]
 };

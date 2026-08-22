@@ -154,8 +154,19 @@ async function run() {
   console.log('✔ 已生成 public/data.js / data.json （' + repos.length + ' 个仓库）');
 }
 
+// 增量采集单个仓库，只请求 1 次 API，更新 data.json 中对应条目
+async function syncRepo(owner, name) {
+  const cfg = { owner: owner, name: name };
+  const r = await fetchRepo(cfg.owner, cfg.name);
+  r.featured = false;
+  r.descriptionProcessed = processText(r.description || '');
+  console.log('  ✓ ' + r.fullName + '  ★' + r.stars + '  "' + (r.descriptionProcessed || '').slice(0, 40) + '"');
+  return r;
+}
+
 // 追加采集：把 extraList 里的仓库（"owner/name" 字符串或 {owner,name} 对象）
-// 去重写入 config.json，然后全量重新生成数据。供本地服务器 URL 传参调用。
+// 去重写入 config.json，然后增量采集每个新增的仓库（只请求对应 API，不触发全量）。
+// 供本地服务器 URL 传参调用。
 async function addReposAndSync(extraList) {
   if (!Array.isArray(extraList)) extraList = extraList ? [extraList] : [];
   const raw = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
@@ -169,6 +180,7 @@ async function addReposAndSync(extraList) {
     });
   };
   let added = 0;
+  const toSync = [];
   extraList.forEach(function (item) {
     let o, n;
     if (typeof item === 'string' && item.indexOf('/') >= 0) {
@@ -181,12 +193,57 @@ async function addReposAndSync(extraList) {
     if (has(o, n)) { console.log('  · 已存在，跳过 ' + o + '/' + n); return; }
     existing.push({ owner: o, name: n });
     added++;
+    toSync.push({ owner: o, name: n });
     console.log('  + 新增 ' + o + '/' + n + ' 到 config.json');
   });
   raw.repos = existing;
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(raw, null, 2), 'utf-8');
-  console.log('▶ 开始采集（含 ' + added + ' 个新增仓库）…');
-  return run();
+
+  if (toSync.length === 0) {
+    console.log('▶ 无新增仓库，无需采集');
+    return;
+  }
+
+  console.log('▶ 开始增量采集 ' + toSync.length + ' 个新仓库…');
+  const newRepos = [];
+  for (const cfg of toSync) {
+    try {
+      const r = await syncRepo(cfg.owner, cfg.name);
+      newRepos.push(r);
+    } catch (e) {
+      console.warn('  ✗ ' + cfg.owner + '/' + cfg.name + ' 失败: ' + e.message);
+    }
+    await delay(300);
+  }
+
+  // 加载现有 data.json，把新仓库追加进去
+  let out;
+  try {
+    out = JSON.parse(fs.readFileSync(DATA_JSON, 'utf-8'));
+  } catch (e) {
+    out = { site: {}, repos: [], lastSync: '' };
+  }
+  const existingNames = new Set(out.repos.map(function (r) { return r.fullName.toLowerCase(); }));
+  newRepos.forEach(function (r) {
+    if (!existingNames.has(r.fullName.toLowerCase())) {
+      out.repos.push(r);
+    }
+  });
+  out.lastSync = new Date().toISOString();
+
+  // 原子写入
+  const tmpJSON = DATA_JSON + '.tmp';
+  const tmpJS = DATA_JS + '.tmp';
+  fs.writeFileSync(tmpJSON, JSON.stringify(out, null, 2), 'utf-8');
+  fs.writeFileSync(tmpJS, 'window.SITE_DATA = ' + JSON.stringify(out, null, 2) + ';\n', 'utf-8');
+  const verify = JSON.parse(fs.readFileSync(tmpJSON, 'utf-8'));
+  if (!verify.repos || verify.repos.length === 0) {
+    fs.unlinkSync(tmpJSON); fs.unlinkSync(tmpJS);
+    throw new Error('生成的数据为空，写入已取消');
+  }
+  fs.renameSync(tmpJSON, DATA_JSON);
+  fs.renameSync(tmpJS, DATA_JS);
+  console.log('✔ 增量采集完成，已生成 public/data.js / data.json（共 ' + out.repos.length + ' 个仓库）');
 }
 
 if (require.main === module) {
