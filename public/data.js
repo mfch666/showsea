@@ -2,7 +2,7 @@ window.SITE_DATA = {
   "site": {
     "title": "菜菜坊，专注开源项目，前端、全栈与开发者工具收集展示",
     "author": "菜菜坊",
-    "avatar": "images/avatar.svg",
+    "avatar": "/images/avatar.svg",
     "bio": "开源项目与工具的收集展示。专注前端、全栈与开发者工具。",
     "github": "https://github.com/mfch666",
     "githubUser": "mfch666",
@@ -118,7 +118,7 @@ window.SITE_DATA = {
         "security",
         "server"
       ],
-      "htmlUrl": "https://github.com/edge-defender/defend-node",
+      "htmlUrl": "https://edge.tommms.com/help.html",
       "homepage": "https://edge.tommms.com",
       "updatedAt": "2026-08-22T10:13:26.322Z",
       "createdAt": "2024-06-01T00:00:00Z",

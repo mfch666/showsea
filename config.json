@@ -2,7 +2,7 @@
   "site": {
     "title": "菜菜坊，专注开源项目，前端、全栈与开发者工具收集展示",
     "author": "菜菜坊",
-    "avatar": "images/avatar.svg",
+    "avatar": "/images/avatar.svg",
     "bio": "开源项目与工具的收集展示。专注前端、全栈与开发者工具。",
     "github": "https://github.com/mfch666",
     "githubUser": "mfch666",
