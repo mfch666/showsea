@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/server.js",
     "sync": "node scripts/sync.js",
-    "build": "node -e \"console.log('static site: no build step required, serving ./public as-is')\""
+    "build": "exit 0"
   },
   "engines": {
     "node": ">=18"
