@@ -99,7 +99,7 @@
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:14:05.674Z",
+  "lastSync": "2026-08-22T17:20:26.223Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -146,31 +146,6 @@
       "createdAt": "2013-07-29T03:24:51Z",
       "featured": true,
       "descriptionProcessed": "这个是 repo 用于 Vue 2. 用于 Vue 3, Go 以 https://github.com/vuejs/core"
-    },
-    {
-      "owner": "react",
-      "name": "react",
-      "fullName": "react/react",
-      "description": "The library for web and native user interfaces.",
-      "language": "JavaScript",
-      "languageLabel": "JavaScript",
-      "stars": 247619,
-      "forks": 51245,
-      "watchers": 6600,
-      "topics": [
-        "declarative",
-        "frontend",
-        "javascript",
-        "library",
-        "react",
-        "ui"
-      ],
-      "htmlUrl": "https://github.com/react/react",
-      "homepage": "https://react.dev",
-      "updatedAt": "2026-08-22T10:00:43Z",
-      "createdAt": "2013-05-24T16:15:54Z",
-      "featured": false,
-      "descriptionProcessed": "库用于 Web 与原生用户界面."
     },
     {
       "owner": "mrdoob",
@@ -459,33 +434,6 @@
       "descriptionProcessed": "TypeScript 是一个 superset 的 JavaScript 那个 compiles 以整洁 JavaScript output."
     },
     {
-      "owner": "react",
-      "name": "react-native",
-      "fullName": "react/react-native",
-      "description": "A framework for building native applications using React",
-      "language": "C++",
-      "languageLabel": "C++",
-      "stars": 126392,
-      "forks": 25222,
-      "watchers": 3524,
-      "topics": [
-        "android",
-        "app-framework",
-        "cross-platform",
-        "ios",
-        "mobile",
-        "mobile-development",
-        "react",
-        "react-native"
-      ],
-      "htmlUrl": "https://github.com/react/react-native",
-      "homepage": "https://reactnative.dev",
-      "updatedAt": "2026-08-22T15:45:26Z",
-      "createdAt": "2015-01-09T18:10:16Z",
-      "featured": false,
-      "descriptionProcessed": "一个框架用于构建原生应用使用 React"
-    },
-    {
       "owner": "nodejs",
       "name": "node",
       "fullName": "nodejs/node",
@@ -512,6 +460,24 @@
       "createdAt": "2014-11-26T19:57:11Z",
       "featured": false,
       "descriptionProcessed": "Node.js JavaScript runtime ✨🐢🚀✨"
+    },
+    {
+      "owner": "google",
+      "name": "re2",
+      "fullName": "google/re2",
+      "description": "RE2 is a fast, safe, thread-friendly alternative to backtracking regular expression engines like those used in PCRE, Perl, and Python. It is a C++ library.",
+      "language": "C++",
+      "languageLabel": "C++",
+      "stars": 9785,
+      "forks": 1242,
+      "watchers": 226,
+      "topics": [],
+      "htmlUrl": "https://github.com/google/re2",
+      "homepage": "",
+      "updatedAt": "2026-08-21T13:07:02Z",
+      "createdAt": "2014-08-18T21:21:26Z",
+      "featured": false,
+      "descriptionProcessed": "RE2 是一个快速, safe, thread-friendly 替代以 backtracking regular expression engines 类似 those 使用在 PCRE, Perl, 与 Python. 它是 一个 C++ 库."
     }
   ]
 }

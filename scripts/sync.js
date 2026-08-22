@@ -191,13 +191,9 @@ async function addReposAndSync(extraList) {
     } else { return; }
     if (!o || !n) return;
     if (has(o, n)) { console.log('  · 已存在，跳过 ' + o + '/' + n); return; }
-    existing.push({ owner: o, name: n });
-    added++;
     toSync.push({ owner: o, name: n });
-    console.log('  + 新增 ' + o + '/' + n + ' 到 config.json');
+    added++;
   });
-  raw.repos = existing;
-  fs.writeFileSync(CONFIG_PATH, JSON.stringify(raw, null, 2), 'utf-8');
 
   if (toSync.length === 0) {
     console.log('▶ 无新增仓库，无需采集');
@@ -214,6 +210,19 @@ async function addReposAndSync(extraList) {
       console.warn('  ✗ ' + cfg.owner + '/' + cfg.name + ' 失败: ' + e.message);
     }
     await delay(300);
+  }
+
+  // 所有仓库采集成功后才更新 config.json
+  if (newRepos.length > 0) {
+    existing.push.apply(existing, toSync);
+    raw.repos = existing;
+    fs.writeFileSync(CONFIG_PATH, JSON.stringify(raw, null, 2), 'utf-8');
+    toSync.forEach(function(r) { console.log('  + 新增 ' + r.owner + '/' + r.name + ' 到 config.json'); });
+  }
+
+  if (newRepos.length === 0) {
+    console.error('✘ 所有仓库采集失败，保留原有配置和数据');
+    throw new Error('没有仓库采集成功，数据未更新');
   }
 
   // 加载现有 data.json，把新仓库追加进去

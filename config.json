@@ -145,36 +145,20 @@
       "name": "deepseek-harness"
     },
     {
-      "owner": "OpenCut-app",
-      "name": "OpenCut"
-    },
-    {
-      "owner": "OpenListTeam",
-      "name": "OpenList"
-    },
-    {
       "owner": "torvalds",
       "name": "linux"
-    },
-    {
-      "owner": "test",
-      "name": "test-repo"
     },
     {
       "owner": "microsoft",
       "name": "typescript"
     },
     {
-      "owner": "facebook",
-      "name": "react-native"
+      "owner": "nodejs",
+      "name": "node"
     },
     {
       "owner": "google",
-      "name": "go"
-    },
-    {
-      "owner": "nodejs",
-      "name": "node"
+      "name": "re2"
     }
   ],
   "githubToken": ""
