@@ -425,6 +425,25 @@ html.dark .card-base { box-shadow: 0 2px 8px -2px #0000004d; }
 }
 .mobile-menu a:hover { background: var(--bg-secondary); color: var(--text-primary); }
 
+
+/* 项目卡片 hover 提示层 */
+.repo-card { position: relative; overflow: visible; }
+.repo-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + .5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: .75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  z-index: 100;
+  min-width: 220px;
+  text-align: center;
+}
+.repo-card:hover .repo-tooltip { display: block; }
 /* 加载态 */
 .loading {
   text-align: center;

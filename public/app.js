@@ -120,6 +120,12 @@
     const forks = r.forks != null ? formatNum(r.forks) : '—';
     const url = r.htmlUrl || '#';
 
+    // 为 edge-defender 项目添加 hover 提示层
+    const tooltip = (r.fullName === 'edge-defender/defend-node')
+      ? '<div class="repo-tooltip">' +
+          '<img src="images/20260818021754_31_511.png" alt="站长联系" style="width:200px;height:200px;display:block;margin-bottom:.5rem">' +
+          '<p style="margin:0;font-size:.75rem;color:var(--text-muted);text-align:center">扫码联系站长</p>' +
+        '</div>' : '';
     return '<article class="card-base card-hover repo-card">' +
       '<div>' +
         '<div class="top">' +
@@ -138,6 +144,7 @@
         '<span class="spacer"></span>' +
         '<a class="go" href="' + url + '" target="_blank" rel="noopener">GitHub ↗</a>' +
       '</div>' +
+      + tooltip +
     '</article>';
   }
 
