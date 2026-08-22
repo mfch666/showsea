@@ -82,6 +82,7 @@ async function run() {
 
   const repos = [];
   let totalStars = 0;
+  let hasHardFailure = false;
   for (const cfg of reposCfg) {
     const [o, n] = (cfg.name && cfg.name.indexOf('/') >= 0) ? cfg.name.split('/') : [cfg.owner || owner, cfg.name];
     if (!o || !n) { console.warn('  ! 跳过无效项:', JSON.stringify(cfg)); continue; }
@@ -93,7 +94,14 @@ async function run() {
       repos.push(r);
       console.log('  ✓ ' + r.fullName + '  ★' + r.stars + '  "' + (r.descriptionProcessed || '').slice(0, 40) + '"');
     } catch (e) {
-      console.warn('  ✗ ' + o + '/' + n + ' 失败: ' + e.message);
+      const msg = e.message || '';
+      // 404 = repo 不存在，属于预期情况（如本地 mock 项目），跳过继续写
+      if (/GitHub 404/.test(msg) || /Not Found/.test(msg)) {
+        console.warn('  ○ ' + o + '/' + n + ' 不存在，已跳过');
+      } else {
+        console.warn('  ✗ ' + o + '/' + n + ' 失败: ' + msg);
+        hasHardFailure = true;
+      }
     }
     await delay(300);
   }
@@ -104,6 +112,12 @@ async function run() {
     if (u.repos != null) stats.repos = u.repos;
     if (u.followers != null) stats.followers = u.followers;
     if (u.following != null) stats.following = u.following;
+  }
+
+  // 只要有成功采集的仓库就写入，失败的不影响整体结果
+  if (repos.length === 0) {
+    console.error('✘ 无仓库采集成功，跳过写入，保留原有 data.js/data.json');
+    throw new Error('没有仓库采集成功，数据未更新');
   }
 
   const out = {
@@ -124,8 +138,19 @@ async function run() {
     repos: repos
   };
 
-  fs.writeFileSync(DATA_JSON, JSON.stringify(out, null, 2), 'utf-8');
-  fs.writeFileSync(DATA_JS, 'window.SITE_DATA = ' + JSON.stringify(out, null, 2) + ';\n', 'utf-8');
+  // 原子写入：先写临时文件，验证成功后再替换原文件
+  const tmpJSON = DATA_JSON + '.tmp';
+  const tmpJS = DATA_JS + '.tmp';
+  fs.writeFileSync(tmpJSON, JSON.stringify(out, null, 2), 'utf-8');
+  fs.writeFileSync(tmpJS, 'window.SITE_DATA = ' + JSON.stringify(out, null, 2) + ';\n', 'utf-8');
+  // 验证临时文件可读
+  const verify = JSON.parse(fs.readFileSync(tmpJSON, 'utf-8'));
+  if (!verify.repos || verify.repos.length === 0) {
+    fs.unlinkSync(tmpJSON); fs.unlinkSync(tmpJS);
+    throw new Error('生成的数据为空，写入已取消');
+  }
+  fs.renameSync(tmpJSON, DATA_JSON);
+  fs.renameSync(tmpJS, DATA_JS);
   console.log('✔ 已生成 public/data.js / data.json （' + repos.length + ' 个仓库）');
 }
 

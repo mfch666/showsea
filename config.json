@@ -143,6 +143,10 @@
     {
       "owner": "deepseek-ai",
       "name": "deepseek-harness"
+    },
+    {
+      "owner": "OpenCut-app",
+      "name": "OpenCut"
     }
   ],
   "githubToken": ""
