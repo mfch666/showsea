@@ -50,7 +50,7 @@
       const cards = pg.querySelectorAll('.info-card');
       cards.forEach(function(card) {
         card.style.cursor = 'default';
-        card.addEventListener('mouseenter', function() { console.log('mouseenter on', this);
+        card.addEventListener('mouseenter', function() {
           let tip = this.querySelector('.about-tooltip');
           if (!tip) {
             tip = document.createElement('div');
