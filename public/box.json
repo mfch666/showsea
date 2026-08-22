@@ -1,0 +1,45 @@
+{
+    "urls": [
+	    {
+            "url": "http://www.饭太硬.net/tv",
+            "name": "饭太硬主线"
+        },
+	    {
+            "url": "http://fty.xxooo.cf/tv",
+            "name": "饭太硬备"
+        },
+			    {
+            "url": "http://fty.888484.xyz/tv",
+            "name": "饭太硬备3"
+        },
+			    {
+            "url": "http://fty.333232.xyz/tv",
+            "name": "饭太硬备4"
+        },
+	    {
+            "url": "https://xn--dkw0c.e.nxog.top/apitv.php?id=20",
+            "name": "欧歌20"
+        },			
+		{
+            "url": "https://欧歌.e.nxog.top/apitv.php?id=16",
+            "name": "欧歌16"
+        },
+		{
+            "url": "https://欧歌.e.nxog.top/apitv.php?id=11",
+            "name": "欧歌11"
+        },
+		{
+            "url": "http://pandown.pro/tvbox/tvbox.json",
+            "name": "TVBOX"
+        },
+
+        {
+            "url": "http://tvbox.xn--4kq62z5rby2qupq9ub.top/",
+            "name": "放牛线路"
+        },		
+        {
+            "url": "http://o.nxog.top/m/111.php?ou=公众号欧歌app&mz=index&jar=index&123&b=欧歌",
+            "name": "欧歌线路"
+        }
+    ]
+}
