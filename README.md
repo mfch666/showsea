@@ -1,6 +1,6 @@
-# GitHub 项目展示静态站（仿 liuhouliang.com）
+# GitHub 项目展示静态站
 
-一个**纯静态**的 GitHub 开源项目展示站，设计语言 1:1 复刻 [liuhouliang.com](https://liuhouliang.com/)（Tailwind slate 色系 + 蓝色强调 + 暗色模式 + 玻璃拟态头部 + 卡片悬浮）。
+一个**纯静态**的 GitHub 开源项目展示站，设计语言 1:1 复刻 （Tailwind slate 色系 + 蓝色强调 + 暗色模式 + 玻璃拟态头部 + 卡片悬浮）。
 
 - 本地用 Node.js 指定要采集的仓库，一键同步 GitHub 数据
 - 生成的站点零依赖、零后端，可直接托管到 **SAE Pages**（或任意静态托管）
