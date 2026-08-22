@@ -114,10 +114,10 @@ async function run() {
     if (u.following != null) stats.following = u.following;
   }
 
-  // 只要有成功采集的仓库就写入，失败的不影响整体结果
-  if (repos.length === 0) {
-    console.error('✘ 无仓库采集成功，跳过写入，保留原有 data.js/data.json');
-    throw new Error('没有仓库采集成功，数据未更新');
+  // 全部成功才写入，部分失败保留旧数据
+  if (repos.length !== reposCfg.length) {
+    console.error('✘ 采集失败 ' + (reposCfg.length - repos.length) + ' 个仓库，保留原有 data.js/data.json');
+    throw new Error('部分仓库采集失败，数据未更新');
   }
 
   const out = {
