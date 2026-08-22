@@ -50,12 +50,12 @@
       const cards = pg.querySelectorAll('.info-card');
       cards.forEach(function(card) {
         card.style.cursor = 'default';
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function() { console.log('mouseenter on', this);
           let tip = this.querySelector('.about-tooltip');
           if (!tip) {
             tip = document.createElement('div');
             tip.className = 'about-tooltip';
-            tip.innerHTML = '<img src="../../public/images/20260818021754_31_511.png" alt="站长联系" style="width:160px;height:160px;display:block;margin:0 auto .3rem;"><p style="margin:0;font-size:.7rem;color:var(--text-muted);text-align:center;">扫码联系站长</p>';
+            tip.innerHTML = '<img src="/images/20260818021754_31_511.png" alt="站长联系" style="width:160px;height:160px;display:block;margin:0 auto .3rem;"><p style="margin:0;font-size:.7rem;color:var(--text-muted);text-align:center;">扫码联系站长</p>';
             this.appendChild(tip);
           }
           tip.style.display = 'block';
