@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:07:07.026Z",
+  "lastSync": "2026-08-22T17:13:18.853Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -434,6 +434,56 @@ window.SITE_DATA = {
       "createdAt": "2011-09-04T22:48:12Z",
       "featured": false,
       "descriptionProcessed": "Linux kernel 源 tree"
+    },
+    {
+      "owner": "microsoft",
+      "name": "TypeScript",
+      "fullName": "microsoft/TypeScript",
+      "description": "TypeScript is a superset of JavaScript that compiles to clean JavaScript output.",
+      "language": "Go",
+      "languageLabel": "Go",
+      "stars": 110485,
+      "forks": 13747,
+      "watchers": 2232,
+      "topics": [
+        "javascript",
+        "language",
+        "typechecker",
+        "typescript"
+      ],
+      "htmlUrl": "https://github.com/microsoft/TypeScript",
+      "homepage": "https://www.typescriptlang.org",
+      "updatedAt": "2026-08-22T17:05:27Z",
+      "createdAt": "2014-06-17T15:28:39Z",
+      "featured": false,
+      "descriptionProcessed": "TypeScript 是一个 superset 的 JavaScript 那个 compiles 以整洁 JavaScript output."
+    },
+    {
+      "owner": "react",
+      "name": "react-native",
+      "fullName": "react/react-native",
+      "description": "A framework for building native applications using React",
+      "language": "C++",
+      "languageLabel": "C++",
+      "stars": 126392,
+      "forks": 25222,
+      "watchers": 3524,
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "ios",
+        "mobile",
+        "mobile-development",
+        "react",
+        "react-native"
+      ],
+      "htmlUrl": "https://github.com/react/react-native",
+      "homepage": "https://reactnative.dev",
+      "updatedAt": "2026-08-22T15:45:26Z",
+      "createdAt": "2015-01-09T18:10:16Z",
+      "featured": false,
+      "descriptionProcessed": "一个框架用于构建原生应用使用 React"
     }
   ]
 };

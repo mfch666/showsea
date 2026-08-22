@@ -155,6 +155,18 @@
     {
       "owner": "torvalds",
       "name": "linux"
+    },
+    {
+      "owner": "test",
+      "name": "test-repo"
+    },
+    {
+      "owner": "microsoft",
+      "name": "typescript"
+    },
+    {
+      "owner": "facebook",
+      "name": "react-native"
     }
   ],
   "githubToken": ""
