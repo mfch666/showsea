@@ -99,7 +99,7 @@
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:13:18.853Z",
+  "lastSync": "2026-08-22T17:14:05.674Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -484,6 +484,34 @@
       "createdAt": "2015-01-09T18:10:16Z",
       "featured": false,
       "descriptionProcessed": "一个框架用于构建原生应用使用 React"
+    },
+    {
+      "owner": "nodejs",
+      "name": "node",
+      "fullName": "nodejs/node",
+      "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+      "language": "JavaScript",
+      "languageLabel": "JavaScript",
+      "stars": 119263,
+      "forks": 36563,
+      "watchers": 3012,
+      "topics": [
+        "javascript",
+        "js",
+        "linux",
+        "macos",
+        "mit",
+        "node",
+        "nodejs",
+        "runtime",
+        "windows"
+      ],
+      "htmlUrl": "https://github.com/nodejs/node",
+      "homepage": "https://nodejs.org",
+      "updatedAt": "2026-08-22T17:13:07Z",
+      "createdAt": "2014-11-26T19:57:11Z",
+      "featured": false,
+      "descriptionProcessed": "Node.js JavaScript runtime ✨🐢🚀✨"
     }
   ]
 }

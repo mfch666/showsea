@@ -167,6 +167,14 @@
     {
       "owner": "facebook",
       "name": "react-native"
+    },
+    {
+      "owner": "google",
+      "name": "go"
+    },
+    {
+      "owner": "nodejs",
+      "name": "node"
     }
   ],
   "githubToken": ""
