@@ -1,7 +1,7 @@
 {
   "name": "showsea",
   "installCommand": "",
-  "buildCommand": "",
+  "buildCommand": "npm run build",
   "assets": {
     "directory": "./public",
     "notFoundStrategy": "404Page"
