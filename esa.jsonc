@@ -1,9 +1,9 @@
 {
   "name": "showsea",
   "installCommand": "",
-  "buildCommand": "true",
+  "buildCommand": "",
   "assets": {
     "directory": "./public",
-    "notFoundStrategy": "singlePageApplication"
+    "notFoundStrategy": "404Page"
   }
 }
