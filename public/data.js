@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:21:05.022Z",
+  "lastSync": "2026-08-22T17:21:59.173Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -503,6 +503,29 @@ window.SITE_DATA = {
       "updatedAt": "2026-08-22T10:20:01Z",
       "createdAt": "2013-05-24T16:15:54Z",
       "featured": false
+    },
+    {
+      "owner": "OpenListTeam",
+      "name": "OpenList",
+      "fullName": "OpenListTeam/OpenList",
+      "description": "A new AList Fork to Anti Trust Crisis",
+      "language": "Go",
+      "languageLabel": "Go",
+      "stars": 24258,
+      "forks": 2213,
+      "watchers": 62,
+      "topics": [
+        "alist",
+        "aliyunpan",
+        "baidupan",
+        "openlist"
+      ],
+      "htmlUrl": "https://github.com/OpenListTeam/OpenList",
+      "homepage": "https://doc.oplist.org",
+      "updatedAt": "2026-08-22T16:03:17Z",
+      "createdAt": "2025-06-11T23:35:02Z",
+      "featured": false,
+      "descriptionProcessed": "一个新 AList 复刻以 Anti Trust Crisis"
     }
   ]
 };

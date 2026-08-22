@@ -159,6 +159,10 @@
     {
       "owner": "google",
       "name": "re2"
+    },
+    {
+      "owner": "OpenListTeam",
+      "name": "OpenList"
     }
   ],
   "githubToken": ""
