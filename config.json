@@ -94,6 +94,11 @@
   },
   "repos": [
     {
+      "owner": "edge-defender",
+      "name": "defend-node",
+      "featured": true
+    },
+    {
       "owner": "vuejs",
       "name": "vue",
       "featured": true
