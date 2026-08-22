@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:20:26.223Z",
+  "lastSync": "2026-08-22T17:21:05.022Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -478,6 +478,31 @@ window.SITE_DATA = {
       "createdAt": "2014-08-18T21:21:26Z",
       "featured": false,
       "descriptionProcessed": "RE2 是一个快速, safe, thread-friendly 替代以 backtracking regular expression engines 类似 those 使用在 PCRE, Perl, 与 Python. 它是 一个 C++ 库."
+    },
+    {
+      "owner": "facebook",
+      "name": "react",
+      "fullName": "facebook/react",
+      "description": "The library for web and native user interfaces.",
+      "descriptionProcessed": "库用于 Web 与原生用户界面.",
+      "language": "JavaScript",
+      "languageLabel": "JavaScript",
+      "stars": 247619,
+      "forks": 51244,
+      "watchers": 6600,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "htmlUrl": "https://github.com/facebook/react",
+      "homepage": "https://react.dev",
+      "updatedAt": "2026-08-22T10:20:01Z",
+      "createdAt": "2013-05-24T16:15:54Z",
+      "featured": false
     }
   ]
 };
