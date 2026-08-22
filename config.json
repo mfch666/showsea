@@ -163,6 +163,10 @@
     {
       "owner": "OpenListTeam",
       "name": "OpenList"
+    },
+    {
+      "owner": "Genymobile",
+      "name": "scrcpy"
     }
   ],
   "githubToken": ""

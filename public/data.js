@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:21:59.173Z",
+  "lastSync": "2026-08-22T17:34:52.213Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -526,6 +526,33 @@ window.SITE_DATA = {
       "createdAt": "2025-06-11T23:35:02Z",
       "featured": false,
       "descriptionProcessed": "一个新 AList 复刻以 Anti Trust Crisis"
+    },
+    {
+      "owner": "Genymobile",
+      "name": "scrcpy",
+      "fullName": "Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "languageLabel": "C",
+      "stars": 148072,
+      "forks": 13636,
+      "watchers": 1389,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen",
+        "sdl2"
+      ],
+      "htmlUrl": "https://github.com/Genymobile/scrcpy",
+      "homepage": "",
+      "updatedAt": "2026-08-22T17:07:29Z",
+      "createdAt": "2017-11-21T18:00:27Z",
+      "featured": false,
+      "descriptionProcessed": "Display 与 control 你的安卓 device"
     }
   ]
 };
