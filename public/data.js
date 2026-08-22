@@ -118,7 +118,7 @@ window.SITE_DATA = {
         "security",
         "server"
       ],
-      "htmlUrl": "https://github.com/edge-defender/defend-node",
+      "htmlUrl": "https://edge.tommms.com/help.html",
       "homepage": "https://edge.tommms.com",
       "updatedAt": "2026-08-22T10:13:26.322Z",
       "createdAt": "2024-06-01T00:00:00Z",
