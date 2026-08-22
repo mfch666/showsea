@@ -1,7 +1,7 @@
 window.SITE_DATA = {
   "site": {
-    "title": "My Projects",
-    "author": "Your Name",
+    "title": "菜菜坊，专注开源项目，前端、全栈与开发者工具收集展示",
+    "author": "菜菜坊",
     "avatar": "images/avatar.svg",
     "bio": "开源项目与工具的收集展示。专注前端、全栈与开发者工具。",
     "github": "https://github.com/your-username",
@@ -10,20 +10,82 @@ window.SITE_DATA = {
     "nav": [
       {
         "label": "项目",
-        "href": "#projects"
+        "href": "/#projects"
       },
       {
         "label": "关于",
-        "href": "#about"
+        "href": "/about/"
       }
     ],
-    "about": "",
+    "about": "这里写关于本站 / 作者的介绍，支持多段落与链接。<br><br>例如：我是菜菜坊，专注开源项目收集与前端开发。更多内容后续补充。",
     "stats": {
       "repos": 6,
-      "stars": 999083
+      "stars": 999184
+    },
+    "aboutPage": {
+      "greeting": "👋 Hey, I'm",
+      "role": "开源项目收集者 / 独立开发者",
+      "tags": [
+        "前端",
+        "全栈",
+        "开发者工具",
+        "爱好折腾"
+      ],
+      "bio": "梦想成为独立开发者的调包程序员。擅长面向搜索引擎编程，热爱生活与折腾。",
+      "profile": [
+        {
+          "label": "现状",
+          "value": "持续打磨开源展示站"
+        },
+        {
+          "label": "职业",
+          "value": "开源项目收集 / 前端开发"
+        },
+        {
+          "label": "爱好",
+          "value": "游戏 / 骑行 / 登山"
+        },
+        {
+          "label": "技术栈",
+          "value": "JavaScript / Node.js / CSS"
+        },
+        {
+          "label": "邮箱",
+          "value": "mailto:your@email.com",
+          "isLink": true
+        },
+        {
+          "label": "目标",
+          "value": "做出好用的开发者工具"
+        }
+      ],
+      "siteInfo": [
+        {
+          "label": "框架",
+          "value": "Node.js + 静态资源"
+        },
+        {
+          "label": "样式",
+          "value": "原生 CSS（设计令牌）"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2026-08",
+          "text": "站点重构，统一设计令牌与暗色模式"
+        },
+        {
+          "date": "2026-08",
+          "text": "上线 GitHub 仓库采集与 URL 参数采集"
+        },
+        {
+          "date": "2026-08",
+          "text": "部署至 SAE Pages，手动 git 同步"
+        }
+      ]
     }
   },
-  "lastSync": "2026-08-22T08:21:00.119Z",
+  "lastSync": "2026-08-22T08:37:40.692Z",
   "repos": [
     {
       "owner": "vuejs",
@@ -32,7 +94,7 @@ window.SITE_DATA = {
       "description": "This is the repo for Vue 2. For Vue 3, go to https://github.com/vuejs/core",
       "language": "TypeScript",
       "languageLabel": "TypeScript",
-      "stars": 210341,
+      "stars": 210386,
       "forks": 33758,
       "watchers": 5782,
       "topics": [
@@ -43,7 +105,7 @@ window.SITE_DATA = {
       ],
       "htmlUrl": "https://github.com/vuejs/vue",
       "homepage": "http://v2.vuejs.org",
-      "updatedAt": "2026-08-22T06:13:09Z",
+      "updatedAt": "2026-08-22T08:37:30Z",
       "createdAt": "2013-07-29T03:24:51Z",
       "featured": true,
       "descriptionProcessed": "这个是 repo 用于 Vue 2. 用于 Vue 3, Go 以 https://github.com/vuejs/core"
@@ -55,7 +117,7 @@ window.SITE_DATA = {
       "description": "The library for web and native user interfaces.",
       "language": "JavaScript",
       "languageLabel": "JavaScript",
-      "stars": 247497,
+      "stars": 247552,
       "forks": 51247,
       "watchers": 6601,
       "topics": [
@@ -68,7 +130,7 @@ window.SITE_DATA = {
       ],
       "htmlUrl": "https://github.com/react/react",
       "homepage": "https://react.dev",
-      "updatedAt": "2026-08-22T07:31:54Z",
+      "updatedAt": "2026-08-22T08:37:24Z",
       "createdAt": "2013-05-24T16:15:54Z",
       "featured": false,
       "descriptionProcessed": "库用于 Web 与原生用户界面."
@@ -164,7 +226,7 @@ window.SITE_DATA = {
       "description": "The React Framework",
       "language": "JavaScript",
       "languageLabel": "JavaScript",
-      "stars": 141884,
+      "stars": 141885,
       "forks": 31772,
       "watchers": 1638,
       "topics": [
@@ -185,7 +247,7 @@ window.SITE_DATA = {
       ],
       "htmlUrl": "https://github.com/vercel/next.js",
       "homepage": "https://nextjs.org",
-      "updatedAt": "2026-08-22T07:42:13Z",
+      "updatedAt": "2026-08-22T08:30:03Z",
       "createdAt": "2016-10-05T23:32:51Z",
       "featured": false,
       "descriptionProcessed": "React 框架"

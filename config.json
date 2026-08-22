@@ -1,16 +1,39 @@
 {
   "site": {
-    "title": "My Projects",
-    "author": "Your Name",
+    "title": "菜菜坊，专注开源项目，前端、全栈与开发者工具收集展示",
+    "author": "菜菜坊",
     "avatar": "images/avatar.svg",
     "bio": "开源项目与工具的收集展示。专注前端、全栈与开发者工具。",
     "github": "https://github.com/your-username",
     "githubUser": "your-username",
     "startYear": 2024,
     "nav": [
-      { "label": "项目", "href": "#projects" },
-      { "label": "关于", "href": "#about" }
-    ]
+      { "label": "项目", "href": "/#projects" },
+      { "label": "关于", "href": "/about/" }
+    ],
+    "aboutPage": {
+      "greeting": "👋 Hey, I'm",
+      "role": "开源项目收集者 / 独立开发者",
+      "tags": ["前端", "全栈", "开发者工具", "爱好折腾"],
+      "bio": "梦想成为独立开发者的调包程序员。擅长面向搜索引擎编程，热爱生活与折腾。",
+      "profile": [
+        { "label": "现状", "value": "持续打磨开源展示站" },
+        { "label": "职业", "value": "开源项目收集 / 前端开发" },
+        { "label": "爱好", "value": "游戏 / 骑行 / 登山" },
+        { "label": "技术栈", "value": "JavaScript / Node.js / CSS" },
+        { "label": "邮箱", "value": "mailto:your@email.com", "isLink": true },
+        { "label": "目标", "value": "做出好用的开发者工具" }
+      ],
+      "siteInfo": [
+        { "label": "框架", "value": "Node.js + 静态资源" },
+        { "label": "样式", "value": "原生 CSS（设计令牌）" }
+      ],
+      "timeline": [
+        { "date": "2026-08", "text": "站点重构，统一设计令牌与暗色模式" },
+        { "date": "2026-08", "text": "上线 GitHub 仓库采集与 URL 参数采集" },
+        { "date": "2026-08", "text": "部署至 SAE Pages，手动 git 同步" }
+      ]
+    }
   },
   "repos": [
     { "owner": "vuejs", "name": "vue", "featured": true },

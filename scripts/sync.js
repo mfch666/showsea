@@ -117,6 +117,7 @@ async function run() {
       startYear: site.startYear,
       nav: site.nav || [],
       about: site.about || '',
+      aboutPage: site.aboutPage || {},
       stats: stats
     },
     lastSync: new Date().toISOString(),

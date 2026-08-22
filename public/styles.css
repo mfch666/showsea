@@ -394,6 +394,13 @@ html.dark .card-base { box-shadow: 0 2px 8px -2px #0000004d; }
 }
 .site-footer a { color: var(--text-muted); }
 .site-footer a:hover { color: var(--accent); }
+.beian-link { margin-left: .5rem; color: var(--text-muted); }
+.beian-link:hover { color: var(--accent); }
+
+/* ---------- 关于内容 ---------- */
+.about-content { margin-top: .5rem; color: var(--text-secondary); }
+.about-content p { margin: 0 0 1rem; }
+.about-content a { color: var(--accent); }
 
 /* 移动端导航（简单展开） */
 .nav-mobile { display: flex; }
@@ -425,3 +432,93 @@ html.dark .card-base { box-shadow: 0 2px 8px -2px #0000004d; }
   padding: 3rem 0;
   font-size: .9rem;
 }
+
+/* ============================================================
+   关于页（独立页面，模仿 liuhouliang.com/about 前部分）
+   ============================================================ */
+.about-page {
+  max-width: 48rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+@media (min-width: 640px) { .about-page { padding: 2.5rem 1.5rem 4rem; } }
+
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.about-greeting { margin: 0; color: var(--text-muted); font-size: 1rem; }
+.about-hero h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--text-primary);
+}
+.about-role { margin: 0; color: var(--accent); font-weight: 600; font-size: 1.05rem; }
+.about-bio { margin: .25rem 0 0; max-width: 42rem; color: var(--text-secondary); line-height: 1.7; }
+.tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+.tag-pill {
+  padding: .3rem .8rem;
+  border-radius: 9999px;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: .85rem;
+  font-weight: 500;
+}
+
+.about-section { margin-top: 2.5rem; }
+.about-h2 {
+  margin: 0 0 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--text-primary);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .875rem;
+}
+@media (min-width: 768px) { .info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.info-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.15rem;
+  transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+.info-card:hover { border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.info-label { font-size: .8rem; color: var(--text-muted); margin-bottom: .4rem; }
+.info-value { font-size: .95rem; color: var(--text-primary); font-weight: 500; word-break: break-word; }
+.info-value a { color: var(--accent); }
+
+.timeline {
+  position: relative;
+  margin-top: .25rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--border-color);
+}
+.timeline-item { position: relative; padding-bottom: 1.4rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.68rem;
+  top: .3rem;
+  width: .7rem;
+  height: .7rem;
+  border-radius: 9999px;
+  background: var(--accent);
+  border: 2px solid var(--bg-surface);
+  box-sizing: content-box;
+}
+.timeline-date { font-family: var(--font-mono); font-size: .8rem; color: var(--text-muted); }
+.timeline-text { color: var(--text-secondary); margin-top: .15rem; line-height: 1.6; }

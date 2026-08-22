@@ -97,7 +97,9 @@
   // ---------- 关于 ----------
   if (site.about) {
     const ab = document.getElementById('about');
-    if (ab) { ab.style.display = ''; ab.textContent = site.about; }
+    const ac = document.getElementById('about-content');
+    if (ab) { ab.style.display = ''; }
+    if (ac) { ac.innerHTML = site.about; }
   }
 
   // ---------- Footer ----------

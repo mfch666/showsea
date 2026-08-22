@@ -79,8 +79,18 @@ const server = http.createServer(async function (req, res) {
   if (!filePath.startsWith(PUBLIC_DIR)) { send(res, 403, 'Forbidden'); return; }
 
   fs.stat(filePath, function (err, stat) {
-    if (err || !stat.isFile()) { send(res, 404, 'Not Found'); return; }
-    serveFile(res, filePath);
+    if (err) { send(res, 404, 'Not Found'); return; }
+    if (stat.isFile()) { serveFile(res, filePath); return; }
+    // 目录请求（如 /about/ 或 /about）→ 尝试 index.html
+    if (stat.isDirectory()) {
+      const idx = path.join(filePath, 'index.html');
+      fs.stat(idx, function (e2, s2) {
+        if (e2 || !s2.isFile()) { send(res, 404, 'Not Found'); return; }
+        serveFile(res, idx);
+      });
+      return;
+    }
+    send(res, 404, 'Not Found');
   });
 });
 
