@@ -171,6 +171,10 @@
     {
       "owner": "barry-ran",
       "name": "QtScrcpy"
+    },
+    {
+      "owner": "anywhere-labs",
+      "name": "deepseek-harness-desktop"
     }
   ],
   "githubToken": ""

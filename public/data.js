@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-23T14:57:23.965Z",
+  "lastSync": "2026-08-23T16:29:58.340Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -574,6 +574,33 @@ window.SITE_DATA = {
       "createdAt": "2019-06-23T04:12:17Z",
       "featured": false,
       "descriptionProcessed": "安卓 real-time display control software"
+    },
+    {
+      "owner": "anywhere-labs",
+      "name": "deepseek-harness-desktop",
+      "fullName": "anywhere-labs/deepseek-harness-desktop",
+      "description": "为 DeepSeek Harness (DSH) 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。",
+      "language": "TypeScript",
+      "languageLabel": "TypeScript",
+      "stars": 18862,
+      "forks": 919,
+      "watchers": 46,
+      "topics": [
+        "cordis",
+        "cordis-plugin",
+        "deepseek",
+        "deepseek-harness",
+        "desktop",
+        "dsh",
+        "dsh-plugin",
+        "dsh-plugin-desktop"
+      ],
+      "htmlUrl": "https://github.com/anywhere-labs/deepseek-harness-desktop",
+      "homepage": "https://dshdesktop.cn",
+      "updatedAt": "2026-08-23T16:29:15Z",
+      "createdAt": "2026-08-13T16:30:50Z",
+      "featured": false,
+      "descriptionProcessed": "为 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。"
     }
   ]
 };
