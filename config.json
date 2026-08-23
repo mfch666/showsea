@@ -167,6 +167,10 @@
     {
       "owner": "Genymobile",
       "name": "scrcpy"
+    },
+    {
+      "owner": "barry-ran",
+      "name": "QtScrcpy"
     }
   ],
   "githubToken": ""

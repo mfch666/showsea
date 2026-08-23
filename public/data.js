@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-08-22T17:34:52.213Z",
+  "lastSync": "2026-08-23T14:57:23.965Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -553,6 +553,27 @@ window.SITE_DATA = {
       "createdAt": "2017-11-21T18:00:27Z",
       "featured": false,
       "descriptionProcessed": "Display 与 control 你的安卓 device"
+    },
+    {
+      "owner": "barry-ran",
+      "name": "QtScrcpy",
+      "fullName": "barry-ran/QtScrcpy",
+      "description": "Android real-time display control software",
+      "language": "C++",
+      "languageLabel": "C++",
+      "stars": 31597,
+      "forks": 3741,
+      "watchers": 239,
+      "topics": [
+        "android",
+        "qt"
+      ],
+      "htmlUrl": "https://github.com/barry-ran/QtScrcpy",
+      "homepage": "https://blog.csdn.net/rankun1/article/details/87970523",
+      "updatedAt": "2026-08-23T14:34:19Z",
+      "createdAt": "2019-06-23T04:12:17Z",
+      "featured": false,
+      "descriptionProcessed": "安卓 real-time display control software"
     }
   ]
 };
