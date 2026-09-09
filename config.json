@@ -175,6 +175,10 @@
     {
       "owner": "anywhere-labs",
       "name": "deepseek-harness-desktop"
+    },
+    {
+      "owner": "MoonTechLab",
+      "name": "LunaTV"
     }
   ],
   "githubToken": ""

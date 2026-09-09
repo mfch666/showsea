@@ -99,7 +99,7 @@
       "following": 1
     }
   },
-  "lastSync": "2026-08-23T16:29:58.340Z",
+  "lastSync": "2026-09-09T16:33:09.333Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -601,6 +601,24 @@
       "createdAt": "2026-08-13T16:30:50Z",
       "featured": false,
       "descriptionProcessed": "为 插件生态打造的现代化桌面端解决方案。万物皆「插件」，桌面本身也是「插件」。"
+    },
+    {
+      "owner": "MoonTechLab",
+      "name": "LunaTV",
+      "fullName": "MoonTechLab/LunaTV",
+      "description": "本项目采用 CC BY-NC-SA 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源",
+      "language": "TypeScript",
+      "languageLabel": "TypeScript",
+      "stars": 10382,
+      "forks": 9072,
+      "watchers": 48,
+      "topics": [],
+      "htmlUrl": "https://github.com/MoonTechLab/LunaTV",
+      "homepage": "",
+      "updatedAt": "2026-09-09T15:31:35Z",
+      "createdAt": "2025-08-12T13:59:33Z",
+      "featured": false,
+      "descriptionProcessed": "本项目采用 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源"
     }
   ]
 }

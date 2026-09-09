@@ -87,7 +87,7 @@
     if (!repos.length) {
       pg.innerHTML = '<div class="loading">暂无项目数据，请运行同步脚本。</div>';
     } else {
-      pg.innerHTML = repos.map(renderRepo).join('');
+      pg.innerHTML = repos.slice().reverse().map(renderRepo).join('');
     }
   }
 
