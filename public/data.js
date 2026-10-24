@@ -99,7 +99,7 @@ window.SITE_DATA = {
       "following": 1
     }
   },
-  "lastSync": "2026-09-09T16:33:09.333Z",
+  "lastSync": "2026-10-24T06:25:26.200Z",
   "repos": [
     {
       "owner": "edge-defender",
@@ -619,6 +619,45 @@ window.SITE_DATA = {
       "createdAt": "2025-08-12T13:59:33Z",
       "featured": false,
       "descriptionProcessed": "本项目采用 协议，禁止任何商业化行为，任何衍生项目必须保留本项目地址并以相同协议开源"
+    },
+    {
+      "owner": "morluto",
+      "name": "rea",
+      "fullName": "morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "languageLabel": "TypeScript",
+      "stars": 374318,
+      "forks": 93622,
+      "watchers": 1331,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "binary-analysis",
+        "claude-code",
+        "cli",
+        "codex",
+        "cordis",
+        "decompiler",
+        "developer-tools",
+        "dsh",
+        "dsh-plugin",
+        "ghidra",
+        "hopper",
+        "llm",
+        "mcp",
+        "model-context-protocol",
+        "rea",
+        "reverse-engineering",
+        "static-analysis",
+        "touhou"
+      ],
+      "htmlUrl": "https://github.com/morluto/rea",
+      "homepage": "https://rea.tools",
+      "updatedAt": "2026-10-24T06:24:58Z",
+      "createdAt": "2026-04-14T00:51:32Z",
+      "featured": false,
+      "descriptionProcessed": "Reverse engineer anything 带有 agents, 来自应用 behavior 下以 原生 binaries."
     }
   ]
 };
