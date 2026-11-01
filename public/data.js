@@ -47,7 +47,7 @@ window.SITE_DATA = {
         },
         {
           "label": "起航",
-          "value": "www.flyffstart.com",
+          "value": "http://www.flyffstart.com",
           "isLink": true
         },
         {
