@@ -32,7 +32,26 @@
             "url": "http://pandown.pro/tvbox/tvbox.json",
             "name": "TVBOX"
         },
-
+		{
+            "url": "https://9280.kstore.vip/aiwex.json",
+            "name": "王二小"
+        },
+		 {
+            "url": "http://www.英格里希嗷呜.top/tv",
+            "name": "嗷呜"
+        },
+		{
+            "url": "http://hb.小虎斑.site:25252/仅供测试",
+            "name": "虎斑"
+        },
+		{
+            "url": "https://www.252035.xyz/z/FongMi.json",
+            "name": "真心"
+        },
+		{
+            "url": "https://8815.kstore.vip/tvbox/wmz",
+            "name": "网络"
+        },
         {
             "url": "http://tvbox.xn--4kq62z5rby2qupq9ub.top/",
             "name": "放牛线路"
